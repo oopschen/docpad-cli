@@ -13,7 +13,7 @@ RUN npm update --global npm
 RUN npm install -g docpad
 
 # DocPad authentication.
-RUN echo "{\n  subscribed: false\n  subscribeTryAgain: false\n  tos: true\n  identified: true\n}" > ~/.docpad.cson
+RUN echo -e "{\n  subscribed: false\n  subscribeTryAgain: false\n  tos: true\n  identified: true\n}" > ~/.docpad.cson
 
 
 # Set up the application directory.
