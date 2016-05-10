@@ -1,13 +1,5 @@
-# DocPad Dockerfile
-FROM alpine:latest
+FROM oopschen/nodejs-cli:latest
 MAINTAINER Ray Chen <linxray@gmail.com>
-
-# Environments
-ENV NODE_VERSION 4.3.0-r0
-
-# install nodejs
-RUN apk add -U nodejs=${NODE_VERSION}
-RUN npm update --global npm
 
 # Install DocPad globally.
 RUN npm install -g docpad
@@ -17,16 +9,18 @@ RUN echo -e "{\n  subscribed: false\n  subscribeTryAgain: false\n  tos: true\n  
 
 
 # Set up the application directory.
-
 VOLUME ["/app"]
 WORKDIR /app
 
 
 # Expose the default DocPad port.
-
 EXPOSE 9778
+EXPOSE 8080
+EXPOSE 8081
+EXPOSE 3000
+EXPOSE 5000
 
 
 # Launch DocPad when the container stars, passing through any arguments.
-CMD ["-"]
+CMD ["--help"]
 ENTRYPOINT ["docpad"]
