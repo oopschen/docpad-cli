@@ -7,6 +7,7 @@ RUN npm install -g docpad
 # DocPad authentication.
 RUN echo -e "{\n  subscribed: false\n  subscribeTryAgain: false\n  tos: true\n  identified: true\n}" > ~/.docpad.cson
 RUN chmod +wx ~/.docpad.cson
+RUN ln -sv ~/.docpad.cson /.docpad.cson
 
 
 # Set up the application directory.
