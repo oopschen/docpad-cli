@@ -1,5 +1,5 @@
 # DocPad Dockerfile
-FROM alpine:latest
+FROM oopschen/alpine-nodejs:latest
 MAINTAINER Ray Chen <linxray@gmail.com>
 
 # DocPad authentication.
