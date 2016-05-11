@@ -2,12 +2,8 @@
 FROM alpine:latest
 MAINTAINER Ray Chen <linxray@gmail.com>
 
-# Environments
-ENV NODE_VERSION 4.3.0-r0
-
-# install nodejs
-RUN apk add -U nodejs=${NODE_VERSION}
-RUN npm update --global npm
+# DocPad authentication.
+RUN echo -e "{\n  subscribed: false\n  subscribeTryAgain: false\n  tos: true\n  identified: true\n}" > ~/.docpad.cson
 
 # Install DocPad globally.
 RUN npm install -g docpad
